@@ -117,12 +117,12 @@ func (this *PlaylistController) Post() {
 	}
 
 	//check to see how long the playlist is
-	if len(plTrackPage.Tracks) > 30 {
-		this.Ctx.WriteString("Your playlist is too long, it has be to less than 30 songs.")
+	if len(plTrackPage.Tracks) > 10 {
+		this.Ctx.WriteString("Your playlist is too long, it has be to less than 10 songs.")
 	}
 	var tempArray [10]string
 	//var idArray [10]spotify.ID
-	idArray := make([]spotify.ID, 0, 30) //length = 0, capactiy = 30
+	idArray := make([]spotify.ID, 0, 10) //length = 0, capactiy = 30
 
 	for i := 0; i < 10; i++ {
 		log.Print(plTrackPage.Tracks[i])
